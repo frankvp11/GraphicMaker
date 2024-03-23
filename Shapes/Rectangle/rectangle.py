@@ -4,23 +4,45 @@ from nicegui.element import Element
 
 
 class Rectangle(Element, component='rectangle.js'):
-    def __init__(self, x, y, width=50, height=50, fill='red', stroke='red', stroke_width=1):
+    def __init__(self, x, y, width=50, height=50, **kwargs):
         super().__init__()
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        self.fill = fill
-        self.stroke = stroke
-        self.stroke_width = stroke_width
+        self.fill = kwargs.get('fill', 'red')
+        self.stroke = kwargs.get('stroke', 'black')
+        self.stroke_width = kwargs.get('stroke_width', 1)
+        self.x_scale_factor = kwargs.get('x_scale_factor', 1)
+        self.y_scale_factor = kwargs.get('y_scale_factor', 1)
+        self.rotate_angle = kwargs.get('rotate_angle', 0)
+        self.rotate_x = self.rotate_angle
+        self.rotate_y = self.rotate_angle
+        self.translate_x = kwargs.get('translate_x', 0)
+        self.translate_y = kwargs.get('translate_y', 0)
+        self.x_skew_factor = kwargs.get('x_skew_factor', 0)
+        self.y_skew_factor = kwargs.get('y_skew_factor', 0)
+        self.flip_x = kwargs.get('flip_x', False)
+        self.flip_y = kwargs.get('flip_y', False)
         self._props['x'] = self.x
         self._props['y'] = self.y
         self._props['width'] = self.width
         self._props['height'] = self.height
         self._props['fill'] = self.fill
-        self._props['stroke'] = self.stroke
-        self._props['stroke-width'] = self.stroke_width
-        
+        self._props['outline_color'] = self.stroke
+        self._props['outline_width'] = self.stroke_width
+        self._props['x_scale_factor'] = self.x_scale_factor
+        self._props['y_scale_factor'] = self.y_scale_factor
+        self._props['rotate_angle'] = self.rotate_angle
+        self._props['translate_x'] = self.translate_x
+        self._props['translate_y'] = self.translate_y
+        self._props['x_skew_factor'] = self.x_skew_factor
+        self._props['y_skew_factor'] = self.y_skew_factor
+        self._props['flip_x'] = self.flip_x
+        self._props['flip_y'] = self.flip_y
+
+
+
     def set_x(self, x):
         self.x = x
         self._props['x'] = self.x

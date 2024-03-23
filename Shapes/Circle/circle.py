@@ -24,9 +24,9 @@ class Circle(Element, component='circle.js'):
         self.flip_x = kwargs.get('flip_x', False)
         self.flip_y = kwargs.get('flip_y', False)
 
-        self._props['radius'] = self.radius
+        self._props['r'] = self.radius
         self._props['cx'] = self.x
-        self._props['cy'] = self.x
+        self._props['cy'] = self.y
         self._props['fill'] = self.fill
         self._props['outline_color'] = self.stroke
         self._props['outline_width'] = self.stroke_width

@@ -3,8 +3,8 @@ export default {
     <circle ref='svg' :cx="cx" :cy="cy" :r="r" :fill="fill" :stroke="outline_color" :stroke-width="outline_width" :transform="svgTransform" pointer-events="all" />
   `,
   props: {
-    cx: { type: Number, default: 100 },
-    cy: { type: Number, default: 100 },
+    cx: { type: Number, default: 0 },
+    cy: { type: Number, default: 0 },
     r: { type: Number, default: 10 },
     fill: { type: String, default: "black" },
     x_scale_factor: { type: Number, default: 1 },
@@ -44,13 +44,13 @@ export default {
   methods: {
     onPointerEvent(event_type, event) {
       // Emitting pointer event with event data
-      const width = this.$refs.svg.clientWidth;
-      const height = this.$refs.svg.clientHeight;
+      const width = 200 // this.$refs.svg.clientWidth;
+      const height = 200 //this.$refs.svg.clientHeight;
       console.log("Pointer event", event);
       this.$emit(`svg:${event_type}`, {
         type: event_type,
-        image_x: (event.offsetX * width) / event.x,
-        image_y: (event.offsetY * height) / event.x,
+        image_x: (event.offsetX),
+        image_y: (event.offsetY)
       });
     },
   },
