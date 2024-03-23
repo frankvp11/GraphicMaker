@@ -1,6 +1,6 @@
 export default {
   template: ` 
-    <circle ref='svg' :cx="cx" :cy="cy" :r="r" :fill="fill" :stroke="outline_color" :stroke-width="outline_width" :transform="svgTransform" pointer-events="all" clip-path="url(#cut-off-bottom)" />
+    <circle ref='svg' :cx="cx" :cy="cy" :r="r" :fill="fill" :stroke="outline_color" :stroke-width="outline_width" :transform="svgTransform" pointer-events="all" clip-path="url(#cut-off-bottom)"  />
   `,
   props: {
     cx: { type: Number, default: 0 },

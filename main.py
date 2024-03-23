@@ -2,6 +2,7 @@
 import math
 from nicegui import ui
 from svg import SVG
+from Shapes.AlphaMask.alphamask import AlphaMask
 from Shapes.Circle.circle import Circle
 from Shapes.Polygon.polygon import Polygon
 from Shapes.Rectangle.rectangle import Rectangle
@@ -20,13 +21,14 @@ svg=  SVG().style("border: 1px solid black;")
 
 
 with svg:
-    clip = Clip()
-    with clip.add_slot("maskShape"):
-        Rectangle(50, 50, 100, 100)
-    with clip.add_slot("maskedShape"):
-        Circle(50,50,50)
-    Circle(100, 100, 25, fill="red")
-        
-        
+    mask =  AlphaMask()
+
+    with mask:
+        with mask.add_slot("maskShape"):
+            Circle(50, 50, 70, fill="white")
+        with mask.add_slot("maskedShape"):
+            Rectangle(50, 50, 100, 100, fill="red")
+
+
 
 ui.run()
