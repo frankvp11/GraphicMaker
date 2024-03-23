@@ -1,6 +1,6 @@
 export default {
     template: `
-        <ellipse ref='svg' :cx="cx" :cy="cy" :rx="rx" :ry="ry" :fill="fill" pointer-events="all" clip-path="url(#cut-off-bottom)" />
+        <ellipse ref='svg' :cx="cx" :cy="cy" :rx="rx" :ry="ry" :fill="fill" pointer-events="all"  />
     `,
     props: {
         cx: { type: Number, default: 100 },

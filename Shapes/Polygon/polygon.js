@@ -1,6 +1,6 @@
 export default {
   template: `
-    <polygon ref='svg' :points="points" :fill="fill" :transform="svgTransform" pointer-events="all" clip-path="url(#cut-off-bottom)" />
+    <polygon ref='svg' :points="points" :fill="fill" :transform="svgTransform" pointer-events="all"  />
   `,
   props: {
     points: { type: String, default: "100,10 40,198 190,78 10,78 160,198" }, 

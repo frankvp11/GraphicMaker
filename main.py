@@ -21,14 +21,29 @@ svg=  SVG().style("border: 1px solid black;")
 
 
 with svg:
-    mask =  AlphaMask()
+        mask =  AlphaMask()
+        with mask:
+            with mask.add_slot("maskShape"):
+                Rectangle(50, 50, 100, 100, fill="white")
+                Circle(50, 50, 25, fill="black")
+                
+            with mask.add_slot("maskedShape"):
+                Rectangle(50, 50, 100, 100, fill="red")
 
-    with mask:
-        with mask.add_slot("maskShape"):
-            Circle(50, 50, 70, fill="white")
-        with mask.add_slot("maskedShape"):
-            Rectangle(50, 50, 100, 100, fill="red")
 
+
+with SVG():
+    clip = Clip()
+    with clip.add_slot("maskShape"):
+        Rectangle(50, 50, 100, 100)
+    with clip.add_slot("maskedShape"):
+        Circle(50,50,20)
+
+
+
+with SVG():
+     Circle(50, 50, 25, fill="red")
+     Rectangle(50, 50, 100, 100, fill="black")
 
 
 ui.run()

@@ -3,7 +3,9 @@ export default {
     <clipPath id="cut-off-bottom">
        <slot name="maskShape"></slot>
     </clipPath>
-
-    <slot name="maskedShape" >  </slot>
+  <g clip-path="url(#cut-off-bottom)">
+    <slot name="maskedShape"></slot>
+  </g>
+  
   `,
 };

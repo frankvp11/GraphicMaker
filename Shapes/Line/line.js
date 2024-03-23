@@ -1,6 +1,6 @@
 export default {
   template: `
-    <line ref='svg' :x1="x1" :y1="y1" :x2="x2" :y2="y2" :stroke="stroke" :stroke-width="stroke_width" :transform="svgTransform" pointer-events="all" clip-path="url(#cut-off-bottom)" />
+    <line ref='svg' :x1="x1" :y1="y1" :x2="x2" :y2="y2" :stroke="stroke" :stroke-width="stroke_width" :transform="svgTransform" pointer-events="all" />
   `,
   props: {
     x1: { type: Number, default: 10 },
