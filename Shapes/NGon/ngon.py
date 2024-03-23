@@ -6,24 +6,13 @@ from ..Polygon.polygon import Polygon
 
 
 class NGon(Polygon):
-    def __init__(self, x, y, radius, sides=3, fill='red', stroke='red', stroke_width=1):
+    def __init__(self, x, y, radius, sides=3, **kwargs):
         self.x = x
         self.y = y
         self.radius = radius
         self.sides = sides
-        self.fill = fill
-        self.stroke = stroke
-        self.stroke_width = stroke_width
-        super().__init__(points=self.get_points())
+        super().__init__(points=self.get_points(), **kwargs)
 
-        self._props['radius'] = self.radius
-        self._props['cx'] = self.x
-        self._props['cy'] = self.x
-        self._props['fill'] = self.fill
-        self._props['sides'] = self.sides
-        self._props['stroke'] = self.stroke
-        self._props['stroke-width'] = self.stroke_width
-        self._props['points'] = self.get_points()
         
     def get_points(self):
         points = []

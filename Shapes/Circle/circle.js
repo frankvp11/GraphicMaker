@@ -10,6 +10,9 @@ export default {
     x_scale_factor: { type: Number, default: 1 },
     y_scale_factor: { type: Number, default: 1 },
     rotate_angle: { type: Number, default: 0 },
+    rotate_x: { type: Number, default: 0 },
+    rotate_y: { type: Number, default: 0 },
+
     translate_x: { type: Number, default: 0 },
     translate_y: { type: Number, default: 0 },
     x_skew_factor: { type: Number, default: 0 },
@@ -19,7 +22,7 @@ export default {
   },
   computed: {
     svgTransform() {
-      return `scale(${this.x_scale_factor}, ${this.y_scale_factor}) rotate(${this.rotate_angle}) translate(${this.translate_x}, ${this.translate_y}) skewX(${this.x_skew_factor}) skewY(${this.y_skew_factor})`;
+      return `scale(${this.x_scale_factor}, ${this.y_scale_factor}) rotate(${this.rotate_angle},${this.rotate_x},${this.rotate_y}) translate(${this.translate_x}, ${this.translate_y}) skewX(${this.x_skew_factor}) skewY(${this.y_skew_factor})`;
     }
   },
   mounted() {

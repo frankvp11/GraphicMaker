@@ -17,6 +17,8 @@ class Circle(Element, component='circle.js'):
         self.x_scale_factor = kwargs.get('x_scale_factor', 1)
         self.y_scale_factor = kwargs.get('y_scale_factor', 1)
         self.rotate_angle = kwargs.get('rotate_angle', 0)
+        self.rotate_x = self.rotate_angle
+        self.rotate_y = self.rotate_angle
         self.skew_angle_x = kwargs.get('skew_angle_x', 0)
         self.skew_angle_y = kwargs.get('skew_angle_y', 0)
         self.flip_x = kwargs.get('flip_x', False)
@@ -82,7 +84,11 @@ class Circle(Element, component='circle.js'):
 
     def rotate(self, angle):
         self.rotate_angle = angle
+        self.rotate_x = angle
+        self.rotate_y = angle
         self._props['rotate_angle'] = self.rotate_angle
+        self._props['rotate_x'] = self.rotate_x
+        self._props['rotate_y'] = self.rotate_y
         self.update()
 
 
