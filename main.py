@@ -31,12 +31,12 @@ with svg:
     # .on("svg:pointerenter", lambda e : ui.notify("entered polygon 1")) \
     # .on("svg:pointerdown", lambda e : ui.notify("down on polygon 1")) \
     # .on("svg:pointerup", lambda e : ui.notify("up on polygon 1"))
-    # NGon1 = NGon(100, 100, 50, sides=3, fill='red', stroke_width=10, stroke="blue", rotate_angle=10, y_skew_factor=10) \
-    # .on("svg:pointermove", lambda e : ui.notify("moved on ngon 1")) \
-    # .on("svg:pointerout", lambda e : ui.notify("out of ngon 1")) \
-    # .on("svg:pointerenter", lambda e : ui.notify("entered ngon 1")) \
-    # .on("svg:pointerdown", lambda e : ui.notify("down on ngon 1")) \
-    # .on("svg:pointerup", lambda e : ui.notify("up on ngon 1"))
+    NGon1 = NGon(100, 100, 50, sides=3, fill='red', stroke_width=10, stroke="blue", rotate_angle=10, y_skew_factor=10) \
+    .on("svg:pointermove", lambda e : ui.notify("moved on ngon 1")) \
+    .on("svg:pointerout", lambda e : ui.notify("out of ngon 1")) \
+    .on("svg:pointerenter", lambda e : ui.notify("entered ngon 1")) \
+    .on("svg:pointerdown", lambda e : ui.notify("down on ngon 1")) \
+    .on("svg:pointerup", lambda e : ui.notify("up on ngon 1"))
 
 
 
