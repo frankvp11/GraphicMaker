@@ -9,6 +9,7 @@ from Shapes.Line.line import Line
 from Shapes.NGon.ngon import NGon
 from Shapes.Oval.oval import Oval
 from Shapes.Text.text import Text
+from Shapes.Clip.clip import Clip
 
 svg=  SVG().style("border: 1px solid black;")
 
@@ -16,10 +17,13 @@ svg=  SVG().style("border: 1px solid black;")
 
 
 
-with svg:
 
-    # Circle(50, 50, 50)
-    # Rectangle(50, 50, 100, 100, stroke_width=10, stroke="blue").on("svg:pointerdown", lambda: print("Rectangle clicked"))
+
+with svg:
+    clip = Clip()
+    with clip:
+        rect = Rectangle(0, 0, 100, 100, fill='blue')
+        circ = Circle(50, 50, 50, fill='red')
 
 
 ui.run()
