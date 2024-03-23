@@ -21,9 +21,12 @@ svg=  SVG().style("border: 1px solid black;")
 
 with svg:
     clip = Clip()
-    with clip:
-        rect = Rectangle(0, 0, 100, 100, fill='blue')
-        circ = Circle(50, 50, 50, fill='red')
-
+    with clip.add_slot("maskShape"):
+        Rectangle(50, 50, 100, 100)
+    with clip.add_slot("maskedShape"):
+        Circle(50,50,50)
+    Circle(100, 100, 25, fill="red")
+        
+        
 
 ui.run()

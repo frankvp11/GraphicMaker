@@ -1,6 +1,6 @@
 export default {
     template: `
-        <text ref='svg' :x="x" :y="y" :fill="fill" :font-size="font_size" :font-family="font_family" pointer-events="all">{{ text }}</text>
+        <text ref='svg' :x="x" :y="y" :fill="fill" :font-size="font_size" :font-family="font_family" pointer-events="all">{{ text }} clip-path="url(#cut-off-bottom)"</text>
     `,
     props: {
         x: { type: Number, default: 10 },

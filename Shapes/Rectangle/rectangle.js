@@ -1,6 +1,6 @@
 export default {
   template: `
-    <rect ref='svg' :x="x" :y="y" :width="width" :height="height" :fill="fill" :stroke="outline_color" :stroke-width="outline_width" :transform="svgTransform" pointer-events="all" />
+    <rect ref='svg' :x="x" :y="y" :width="width" :height="height" :fill="fill" :stroke="outline_color" :stroke-width="outline_width" :transform="svgTransform" pointer-events="all" clip-path="url(#cut-off-bottom)" />
   `,
   props: {
     x: { type: Number, default: 75 },
