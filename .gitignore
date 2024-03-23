@@ -1,0 +1,4 @@
+.mpy_py
+*.pyc
+Shapes/*/__pycache__/*.pyc
+Shapes/**/__pycache__/*.pyc

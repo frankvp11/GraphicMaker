@@ -1,12 +1,26 @@
 export default {
-  template: `
-    <circle ref='svg' :cx="cx" :cy="cy" :r="r" :fill="fill" pointer-events="all" />
+  template: ` 
+    <circle ref='svg' :cx="cx" :cy="cy" :r="r" :fill="fill" :stroke="outline_color" :stroke-width="outline_width" :transform="svgTransform" pointer-events="all" />
   `,
   props: {
     cx: { type: Number, default: 100 },
     cy: { type: Number, default: 100 },
     r: { type: Number, default: 10 },
     fill: { type: String, default: "black" },
+    x_scale_factor: { type: Number, default: 1 },
+    y_scale_factor: { type: Number, default: 1 },
+    rotate_angle: { type: Number, default: 0 },
+    translate_x: { type: Number, default: 0 },
+    translate_y: { type: Number, default: 0 },
+    x_skew_factor: { type: Number, default: 0 },
+    y_skew_factor: { type: Number, default: 0 },
+    outline_color: { type: String, default: "black" },
+    outline_width: { type: Number, default: 1 },
+  },
+  computed: {
+    svgTransform() {
+      return `scale(${this.x_scale_factor}, ${this.y_scale_factor}) rotate(${this.rotate_angle}) translate(${this.translate_x}, ${this.translate_y}) skewX(${this.x_skew_factor}) skewY(${this.y_skew_factor})`;
+    }
   },
   mounted() {
     for (const event of [
@@ -25,7 +39,6 @@ export default {
     }
   },
   methods: {
-
     onPointerEvent(event_type, event) {
       // Emitting pointer event with event data
       const width = this.$refs.svg.clientWidth;
