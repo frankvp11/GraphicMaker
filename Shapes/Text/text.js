@@ -32,7 +32,6 @@ export default {
         // Emitting pointer event with event data
         const width = this.$refs.svg.clientWidth;
         const height = this.$refs.svg.clientHeight;
-        console.log("Pointer event", event);
         this.$emit(`svg:${event_type}`, {
             type: event_type,
             image_x: (event.offsetX * width) / event.x,

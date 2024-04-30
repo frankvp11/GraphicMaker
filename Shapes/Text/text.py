@@ -3,7 +3,7 @@ from nicegui import ui
 from nicegui.element import Element
 
 class Text(Element, component="text.js"):
-    def __init__(self, x, y, text, font_size=20, fill='black', stroke='black', stroke_width=1):
+    def __init__(self, x, y, text, font_size=20, fill='black', stroke='black', stroke_width=1, centered=False):
         super().__init__()
         self.x = x
         self.y = y
@@ -12,6 +12,7 @@ class Text(Element, component="text.js"):
         self.fill = fill
         self.stroke = stroke
         self.stroke_width = stroke_width
+        self.centered = centered
         self._props['x'] = self.x
         self._props['y'] = self.y
         self._props['text'] = self.text
@@ -19,6 +20,7 @@ class Text(Element, component="text.js"):
         self._props['fill'] = self.fill
         self._props['stroke'] = self.stroke
         self._props['stroke-width'] = self.stroke_width
+        self._props['centered'] = self.centered
         
     def set_x(self, x):
         self.x = x

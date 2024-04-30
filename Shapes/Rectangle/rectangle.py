@@ -77,3 +77,5 @@ class Rectangle(Element, component='rectangle.js'):
         self.stroke_width = stroke_width
         self._props['stroke-width'] = self.stroke_width
         self.update()
+
+
