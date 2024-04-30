@@ -59,3 +59,6 @@ class NGon(Polygon):
         
     def set_stroke_width(self, stroke_width):
         self.stroke
+
+    def __str__(self, indent : int = 0) -> str:
+        return "  " * indent +  f"NGon({self.x}, {self.y}, radius={self.radius}, sides={self.sides}, fill='{self.fill}', stroke='{self.stroke}', stroke_width={self.stroke_width}\n"

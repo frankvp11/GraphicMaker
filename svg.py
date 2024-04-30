@@ -8,6 +8,7 @@ class SVG(Element, component="svg.js"):
         super().__init__()
         self.width = width
         self.height = height
+        self.viewBox = viewBox
         self.children = []
         self._props['width'] = width
         self._props['height'] = height
@@ -18,4 +19,12 @@ class SVG(Element, component="svg.js"):
     
     def add_children(self, children):
         self.children.extend(children)
-
+    
+    def __str__(self) -> str:
+        code = "svg = SVG(width={}, height={}, viewBox={})\n".format(self.width, self.height, self.viewBox)
+        code += "with svg:\n"
+        for child in self.children:
+            # code += str(child)
+            code += child.__str__(indent=1)
+        return code
+    

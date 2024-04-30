@@ -54,4 +54,7 @@ class Oval(Element, component="oval.js"):
     def set_stroke_width(self, stroke_width):
         self.stroke_width = stroke_width
         self._props['stroke-width'] = self.stroke_width
-        self.update()
+        self.update()   
+
+    def __str__(self, indent : int = 0) -> str:
+        return "  " * indent + f"Oval({self.x}, {self.y},rx={self.rx}, ry={self.ry}, fill='{self.fill}', stroke='{self.stroke}', stroke_width={self.stroke_width})\n"

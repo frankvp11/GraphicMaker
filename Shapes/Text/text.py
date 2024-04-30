@@ -56,3 +56,6 @@ class Text(Element, component="text.js"):
         self.stroke_width = stroke_width
         self._props['stroke-width'] = self.stroke_width
         self.update()
+    
+    def __str__(self, indent : int = 0):
+        return "  " * indent + f"Text(x={self.x}, y={self.y}, text='{self.text}', font_size={self.font_size}, fill='{self.fill}', stroke='{self.stroke}', stroke_width={self.stroke_width}, centered={self.centered})\n"

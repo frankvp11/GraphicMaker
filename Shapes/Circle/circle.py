@@ -99,7 +99,8 @@ class Circle(Element, component='circle.js'):
         pass
 
 
-    
+    def __str__(self, indent: int = 0) -> str:
+        return "  " * indent +  "Circle(x={}, y={}, radius={}, fill='{}', stroke='{}', stroke_width={}, x_scale_factor={}, y_scale_factor={}, rotate_angle={}, skew_angle_x={}, skew_angle_y={}, flip_x={}, flip_y={})\n".format(self.x, self.y, self.radius, self.fill, self.stroke, self.stroke_width, self.x_scale_factor, self.y_scale_factor, self.rotate_angle, self.skew_angle_x, self.skew_angle_y, self.flip_x, self.flip_y)
 
         
     

@@ -78,4 +78,6 @@ class Rectangle(Element, component='rectangle.js'):
         self._props['stroke-width'] = self.stroke_width
         self.update()
 
-
+    def __str__(self, indent : int = 0) -> str:
+        return "  " * indent + f"Rectangle(x={self.x}, y={self.y}, width={self.width}, height={self.height}, fill='{self.fill}', stroke='{self.stroke}', stroke_width={self.stroke_width})\n"
+    

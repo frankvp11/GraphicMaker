@@ -91,3 +91,6 @@ class PolyLine(Element, component="polyline.js"):
         self._props['stroke-width'] = self.stroke_width
         self.update()
         
+    def __str__(self, indent =0) -> str:
+        return "  " * indent + "PolyLine(points='{}', fill='{}')\n".format(self.points, self.fill)
+    

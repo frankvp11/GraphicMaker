@@ -23,3 +23,12 @@ class Group(Element, component="group.js"):
     
     def add_children(self, children):
         self.children.extend(children)
+    
+    def __str__(self, indent: int = 0) -> str:
+        code = "  " * indent + "group = Group(x={}, y={})\n".format(self.x, self.y)
+        code += "  " * indent + "with group:\n"
+        for child in self.children:
+            code += "  " * indent + child.__str__(indent=indent + 1)
+        return code
+    
+

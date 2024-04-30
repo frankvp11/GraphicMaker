@@ -91,3 +91,5 @@ class Polygon(Element, component="polygon.js"):
         self._props['stroke-width'] = self.stroke_width
         self.update()
         
+    def __str__(self, indent : int = 0) -> str:
+        return "  " * indent + "Polygon(points='{}', fill='{}', stroke='{}', stroke_width={})\n".format(self.points, self.fill, self.stroke, self.stroke_width)

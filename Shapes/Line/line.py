@@ -145,3 +145,6 @@ class Line(Element, component="line.js"):
         self.stroke_width = stroke_width
         self._props['stroke-width'] = self.stroke_width
         self.update()
+    
+    def __str__(self, indent : int = 0):
+        return "  " * indent + f"Line(x1={self.x1}, y1={self.y1}, x2={self.x2}, y2={self.y2}, fill='{self.fill}', stroke='{self.stroke}', stroke_width={self.stroke_width}, x_scale_factor={self.x_scale_factor}, y_scale_factor={self.y_scale_factor}, rotate_angle={self.rotate_angle}, translate_x={self.translate_x}, translate_y={self.translate_y}, x_skew_factor={self.x_skew_factor}, y_skew_factor={self.y_skew_factor}, flip_x={self.flip_x}, flip_y={self.flip_y})\n"
