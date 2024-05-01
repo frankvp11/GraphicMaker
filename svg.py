@@ -9,7 +9,7 @@ class SVG(Element, component="svg.js"):
         self.width = width
         self.height = height
         self.viewBox = viewBox
-        self.children = []
+        self.children : list = []
         self._props['width'] = width
         self._props['height'] = height
         self._props['viewBox'] = " ".join(([str(val) for val in viewBox.values()]))
@@ -21,7 +21,7 @@ class SVG(Element, component="svg.js"):
         self.children.extend(children)
     
     def remove_child(self, child):
-        self.children.remove(child)
+        # self.children.remove(child)
         self.slots['default'].children.remove(child)
         self.update()
 
