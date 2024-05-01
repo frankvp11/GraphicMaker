@@ -20,6 +20,14 @@ class SVG(Element, component="svg.js"):
     def add_children(self, children):
         self.children.extend(children)
     
+    def remove_child(self, child):
+        self.children.remove(child)
+        self.slots['default'].children.remove(child)
+        self.update()
+
+    
+
+    
     def __str__(self) -> str:
         code = "svg = SVG(width={}, height={}, viewBox={})\n".format(self.width, self.height, self.viewBox)
         code += "with svg:\n"
